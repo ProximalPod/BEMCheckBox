@@ -33,6 +33,39 @@
     }
     return path;
 }
+- (UIBezierPath *)pathForX {
+    UIBezierPath* checkMarkPath = [UIBezierPath bezierPath];
+
+    [checkMarkPath moveToPoint: CGPointMake(self.size/2.7272, self.size/2.7272)];
+    [checkMarkPath addLineToPoint: CGPointMake(self.size/1.579, self.size/1.579)];
+    [checkMarkPath moveToPoint:CGPointMake(self.size/2.7272, self.size/1.579)];
+    [checkMarkPath addLineToPoint: CGPointMake(self.size/1.579, self.size/2.7272)];
+
+    if (self.boxType == BEMBoxTypeSquare) {
+        // If we use a square box, the check mark should be a little bit bigger
+        [checkMarkPath applyTransform:CGAffineTransformMakeScale(1.5, 1.5)];
+        [checkMarkPath applyTransform:CGAffineTransformMakeTranslation(-self.size/4, -self.size/4)];
+    }
+
+    return checkMarkPath;
+}
+
+- (UIBezierPath *)pathForLongX {
+    UIBezierPath* checkMarkPath = [UIBezierPath bezierPath];
+
+    [checkMarkPath moveToPoint: CGPointMake(self.size/2.7272, self.size/2.7272)];
+    [checkMarkPath addLineToPoint: CGPointMake(self.size/1.579, self.size/1.579)];
+    [checkMarkPath moveToPoint:CGPointMake(self.size/2.7272, self.size/1.579)];
+    [checkMarkPath addLineToPoint: CGPointMake(self.size/1.1812, self.size/6.519)];
+
+    if (self.boxType == BEMBoxTypeSquare) {
+        // If we use a square box, the check mark should be a little bit bigger
+        [checkMarkPath applyTransform:CGAffineTransformMakeScale(1.5, 1.5)];
+        [checkMarkPath applyTransform:CGAffineTransformMakeTranslation(-self.size/4, -self.size/4)];
+    }
+
+    return checkMarkPath;
+}
 
 - (UIBezierPath *)pathForCheckMark {
     UIBezierPath* checkMarkPath = [UIBezierPath bezierPath];

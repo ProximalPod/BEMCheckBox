@@ -37,6 +37,9 @@
  */
 - (UIBezierPath *)pathForBox;
 
+- (UIBezierPath *)pathForX;
+- (UIBezierPath *)pathForLongX;
+
 /** Returns a UIBezierPath object for the checkmark of the checkbox
  * @returns The path of the checkmark.
  */

@@ -24,6 +24,11 @@ typedef NS_ENUM(NSInteger, BEMBoxType) {
     BEMBoxTypeSquare
 };
 
+typedef NS_ENUM(NSInteger, BEMCheckType) {
+    BEMCheckTypeCheck,
+    BEMCheckTypeX
+};
+
 // Tell the compiler to assume that no method should have a NULL value
 NS_ASSUME_NONNULL_BEGIN
 
@@ -117,6 +122,8 @@ typedef NS_ENUM(NSInteger, BEMAnimationType) {
 /** The group this box is associated with.
  */
 @property (strong, nonatomic, nullable, readonly) BEMCheckBoxGroup *group;
+
+@property (nonatomic) BEMCheckType checkType;
 
 /** The type of box.
  * @see BEMBoxType. 
